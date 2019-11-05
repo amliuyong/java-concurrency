@@ -85,8 +85,8 @@
      need to use the validate() method to check whether we can really access the data.
   
    All these methods return a long value called stamp that we need to use to work
-  with the lock. If a method returns zero, it means it tried to get a lock but it
-  couldn't.
+   with the lock. If a method returns zero, it means it tried to get a lock but it
+   couldn't.
    
    A StampedLock lock is not a reentrant lock, such as the Lock and
    ReadWriteLock interfaces. If you call a method that tries to get the lock again, it
@@ -183,14 +183,14 @@
     state. With this, all future calls to any method of phaser will return immediately, and the
     isTerminated() method will return true.
  
- 6. Exchanging data between concurrent tasks - Exchanger [link](./src/ch03_sync_util/c06)
+6. Exchanging data between concurrent tasks - Exchanger [link](./src/ch03_sync_util/c06)
     
     The Exchanger class synchronizes only two threads, you can use it if you have a producer-consumer 
     problem with one producer and one consumer.
     
     the first thread that calls the exchange(buffer) method is put to sleep until the other threads arrive.
   
-  7. Completing and linking tasks asynchronously - CompletableFuture [link](./src/ch03_sync_util/c07)
+7. Completing and linking tasks asynchronously - CompletableFuture [link](./src/ch03_sync_util/c07)
   
      You can work with a CompletableFuture class in different ways:
      
@@ -227,7 +227,6 @@
    when you call this method continue with their execution, but the method doesn't
    wait for their finalization.
    
-   
 2. Executing tasks in an executor that returns a result [link](./src/ch04_executors/c02)
    
    check completion:
@@ -246,7 +245,7 @@
    - executor.invokeAll(taskList) //sync
 
 5. Running a task in an executor after a delay [link](./src/ch04_executors/c05)
-     ```java 
+     ``` 
      ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
      executor.schedule(task, 10, TimeUnit.SECONDS)
     ```
@@ -258,7 +257,6 @@
    value as parameter, pending tasks won't be executed after you call the shutdown()
    method.
    
-     
 6. Running a task in an executor periodically [link](./src/ch04_executors/c06)
    - executor.scheduleAtFixedRate()
    - executor.shutdown() // if not shutdown, it will run forever
@@ -280,7 +278,7 @@
    pull() returns the first element of the queue, which is a Future object of a task
    that has finished its execution.
  
-   ```java
+   ```
      ExecutorService executor = Executors.newCachedThreadPool();
      CompletionService<String> service = new ExecutorCompletionService<>(executor);
     
