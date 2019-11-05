@@ -18,7 +18,7 @@
 ## Basic Thread Synchronization
 1. Synchronizing a method - synchronized [link](./src/ch02_basic_sync/c01)
 2. Using conditions in synchronized code - Producer and Consumer [link](./src/ch02_basic_sync/c02)
-3. Synchronizing a block of code with a lock - ReentrantLock [link](./src/ch02_basic_sync/c03)
+3. Synchronizing a block of code with a lock - **ReentrantLock** [link](./src/ch02_basic_sync/c03)
 
    The constructor of the ReentrantLock class admits a boolean parameter named fair;
    this parameter allows you to control its behavior. The false value is the default value and
@@ -59,7 +59,7 @@
    When you get the read lock of a Lock interface, you can't modify the value of the variable. 
    It is the responsibility of the programmer to ensure correct use of these locks.
    
-5. Using multiple conditions in a lock - lock.newCondition()  [link](./src/ch02_basic_sync/c05)
+5. Using multiple conditions in a lock - lock.**newCondition**()  [link](./src/ch02_basic_sync/c05)
   
 6. Advanced locking with the StampedLock class - Optimistic Read [link](./src/ch02_basic_sync/c06)
 
@@ -67,14 +67,14 @@
    
    You can obtain control of the lock in three different modes:
   
-     - Write: In this mode, you get exclusive access to the lock. No other
+     - **Write**: In this mode, you get exclusive access to the lock. No other
      thread can have control of the lock in this mode.
      
-     - Read: In this mode, you have non-exclusive access to the lock.
+     - **Read**: In this mode, you have non-exclusive access to the lock.
      There can be other threads that have access to the lock in this mode
      or the Optimistic Read mode.
      
-     - Optimistic Read: Here, the thread doesn't have control over the
+     - **Optimistic Read**: Here, the thread doesn't have control over the
      block. Other threads can get control of the lock in write mode.
      When you get a lock in the Optimistic Read mode and you want to
      access the shared data protected by it, you will have to check
@@ -101,26 +101,26 @@
 ## Thread Synchronization Utilities
    You will learn how to use high-level mechanisms to synchronize multiple
    threads. These high-level mechanisms are as follows:
-   - Semaphores: A semaphore is a counter that controls access to one or more shared
+   - **Semaphores**: A semaphore is a counter that controls access to one or more shared
    resources. This mechanism is one of the basic tools of concurrent programming
    and is provided by most programming languages.
-   - CountDownLatch: The CountDownLatch class is a mechanism provided by the
+   - **CountDownLatch**: The CountDownLatch class is a mechanism provided by the
    Java language that allows a thread to wait for the finalization of multiple
    operations.
-   - CyclicBarrier: The CyclicBarrier class is another mechanism provided by the
+   - **CyclicBarrier**: The CyclicBarrier class is another mechanism provided by the
    Java language that allows the synchronization of multiple threads at a common
    point.
-   - Phaser: The Phaser class is another mechanism provided by the Java language
+   - **Phaser**: The Phaser class is another mechanism provided by the Java language
    that controls the execution of concurrent tasks divided in phases. All the threads
    must finish one phase before they can continue with the next one.
-   - Exchanger: The Exchanger class is another mechanism provided by the Java
+   - **Exchanger**: The Exchanger class is another mechanism provided by the Java
    language that provides a point of data interchange between two threads.
-   - CompletableFuture: The CompletableFuture class provides a mechanism
+   - **CompletableFuture**: The CompletableFuture class provides a mechanism
    where one or more tasks can wait for the finalization of another task that will be
    explicitly completed in an asynchronous way in future. This class was introduced
    in Java 8 and has introduced new methods in Java 9.
    
-1. Controlling concurrent access to one or more copies of a resource - Semaphore [link](./src/ch03_sync_util/c01)
+1. Controlling concurrent access to one or more copies of a resource - **Semaphore** [link](./src/ch03_sync_util/c01)
    
    A semaphore is a counter that protects access to one or more shared resources.
    
@@ -214,7 +214,7 @@
 1. Creating a thread executor and controlling its rejected tasks [link](./src/ch04_executors/c01)
    - executor.setRejectedExecutionHandler(...)
    
-   To indicate to the executor that you want to finish it, use the shutdown() method of the
+   To indicate to the executor that you want to finish it, use the **shutdown**() method of the
    ThreadPoolExecutor class. When the executor finishes the execution of all the pending
    tasks, it finishes its execution as well. After you call the shutdown() method, if you try to
    send another task to the executor, it will be rejected and the executor will throw a
@@ -222,7 +222,7 @@
    rejected tasks, as in our case. To manage the rejected tasks of an executor, you need to create
    a class that implements the RejectedExecutionHandler interface.
    
-   shutdownNow(): This shuts down the executor immediately. It doesn't execute
+   **shutdownNow**(): This shuts down the executor immediately. It doesn't execute
    pending tasks. It returns a list with all the pending tasks. Tasks that are running
    when you call this method continue with their execution, but the method doesn't
    wait for their finalization.
@@ -275,7 +275,7 @@
 9. Separating the launching of tasks and the processing of their results in an
  executor (Producer/Consumer) [link](./src/ch04_executors/c09)
  
-   pull() returns the first element of the queue, which is a Future object of a task
+   **pull**() returns the first element of the queue, which is a Future object of a task
    that has finished its execution.
  
    ```
@@ -289,9 +289,9 @@
      Future<String> result=service.poll(20, TimeUnit.SECONDS); 
    ```
 
-    - poll(): If the queue is empty, it returns null immediately. Otherwise, 
+    - **poll**(): If the queue is empty, it returns null immediately. Otherwise, 
     it returns its first element and removes it from the queue.
 
-    - take(): If it is empty, it blocks the thread until the queue has an
+    - **take**(): If it is empty, it blocks the thread until the queue has an
     element. If the queue has elements, it returns and deletes its first element from
     the queue.
