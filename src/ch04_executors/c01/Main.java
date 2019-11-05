@@ -1,8 +1,7 @@
 package ch04_executors.c01;
 
 /**
- * Main class of the example. Creates a server and 100 request of the Task class
- * that sends to the server
+ * Creating a thread executor and controlling its rejected tasks
  */
 public class Main {
 

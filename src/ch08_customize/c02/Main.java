@@ -3,7 +3,6 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.packtpub.java9.concurrency.cookbook.chapter08.recipe02.task.MyPriorityTask;
 
 /**
  * Main method of the class. It creates an Executor with a PriorityQueue as working queue and then

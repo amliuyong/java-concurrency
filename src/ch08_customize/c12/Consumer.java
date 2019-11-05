@@ -1,6 +1,5 @@
 package ch08_customize.c12;
 
-import com.packtpub.java9.concurrency.cookbook.chapter08.recipe12.data.News;
 
 import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.Flow.Subscription;

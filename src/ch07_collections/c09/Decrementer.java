@@ -2,7 +2,6 @@ package ch07_collections.c09;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
-import com.packtpub.java9.concurrency.cookbook.chapter07.recipe09.data.Account;
 
 public class Decrementer implements Runnable {
 

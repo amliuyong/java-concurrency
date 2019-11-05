@@ -1,7 +1,6 @@
 package ch06_streams.c09;
 import java.util.concurrent.Flow;
 
-import com.packtpub.java9.concurrency.cookbook.chapter06.recipe09.items.Item;
 
 public class Consumer1 implements Flow.Subscriber<Item> {
 

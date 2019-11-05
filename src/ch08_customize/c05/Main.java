@@ -2,8 +2,6 @@ package ch08_customize.c05;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import com.packtpub.java9.concurrency.cookbook.chapter08.recipe05.task.MyScheduledThreadPoolExecutor;
-import com.packtpub.java9.concurrency.cookbook.chapter08.recipe05.task.Task;
 
 /**
  * Main class of the example. Creates a MyScheduledThreadPoolExecutor and

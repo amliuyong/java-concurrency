@@ -208,4 +208,92 @@
      - You can specify other tasks to be executed in an asynchronous way after the
      completion of one or more CompletableFuture objects. This task can
      implement the Runnable, Function, Consumer or BiConsumer interfaces.
-  
+ 
+ ## Thread Executors
+
+1. Creating a thread executor and controlling its rejected tasks [link](./src/ch04_executors/c01)
+   - executor.setRejectedExecutionHandler(...)
+   
+   To indicate to the executor that you want to finish it, use the shutdown() method of the
+   ThreadPoolExecutor class. When the executor finishes the execution of all the pending
+   tasks, it finishes its execution as well. After you call the shutdown() method, if you try to
+   send another task to the executor, it will be rejected and the executor will throw a
+   RejectedExecutionException exception, unless you have implemented a manager for
+   rejected tasks, as in our case. To manage the rejected tasks of an executor, you need to create
+   a class that implements the RejectedExecutionHandler interface.
+   
+   shutdownNow(): This shuts down the executor immediately. It doesn't execute
+   pending tasks. It returns a list with all the pending tasks. Tasks that are running
+   when you call this method continue with their execution, but the method doesn't
+   wait for their finalization.
+   
+   
+2. Executing tasks in an executor that returns a result [link](./src/ch04_executors/c02)
+   
+   check completion:
+    - executor.getCompletedTaskCount()
+    - future.isDone()
+    - The awaitTermination() method of the ThreadPoolExecutor class puts the
+    thread to sleep until all the tasks have finished their execution after a call to the
+    shutdown() method
+    
+3. Running multiple tasks and processing the first result [link](./src/ch04_executors/c03)
+
+   - executor.invokeAny(taskList)  //sync
+   
+4. Running multiple tasks and processing all the results [link](./src/ch04_executors/c04)
+   
+   - executor.invokeAll(taskList) //sync
+
+5. Running a task in an executor after a delay [link](./src/ch04_executors/c05)
+     ```java 
+     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+     executor.schedule(task, 10, TimeUnit.SECONDS)
+    ```
+   When you call the shutdown() method, and there are pending tasks waiting for the end of
+   their delay time. The default behavior is that these tasks will be executed despite the
+   finalization of the executor. 
+   
+   setExecuteExistingDelayedTasksAfeterShutdownsPolicy() passing the false
+   value as parameter, pending tasks won't be executed after you call the shutdown()
+   method.
+   
+     
+6. Running a task in an executor periodically [link](./src/ch04_executors/c06)
+   - executor.scheduleAtFixedRate()
+   - executor.shutdown() // if not shutdown, it will run forever
+
+7. Canceling a task in an executor [link](./src/ch04_executors/c07)
+   
+   future.cancel(true)
+   
+   The cancel() method receives a Boolean value as a parameter. 
+   If the value of this parameter is true and the task is running, it will be canceled. 
+   If the value of the parameter is false and the task is running, it won't be canceled.
+   
+8. Controlling a task finishing in an executor [link](./src/ch04_executors/c08)
+   - FutureTask(Callable task)
+
+9. Separating the launching of tasks and the processing of their results in an
+ executor (Producer/Consumer) [link](./src/ch04_executors/c09)
+ 
+   pull() returns the first element of the queue, which is a Future object of a task
+   that has finished its execution.
+ 
+   ```java
+     ExecutorService executor = Executors.newCachedThreadPool();
+     CompletionService<String> service = new ExecutorCompletionService<>(executor);
+    
+     // producer
+     service.submit(task);
+   
+     // consumer
+     Future<String> result=service.poll(20, TimeUnit.SECONDS); 
+   ```
+
+    - poll(): If the queue is empty, it returns null immediately. Otherwise, 
+    it returns its first element and removes it from the queue.
+
+    - take(): If it is empty, it blocks the thread until the queue has an
+    element. If the queue has elements, it returns and deletes its first element from
+    the queue.

@@ -1,6 +1,5 @@
 package ch11_design.c05;
 
-import com.packtpub.java9.concurrency.cookbook.appendix.recipe05.task.Task;
 
 import java.util.Date;
 import java.util.concurrent.Executors;

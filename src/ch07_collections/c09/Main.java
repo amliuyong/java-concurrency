@@ -1,7 +1,4 @@
 package ch07_collections.c09;
-import com.packtpub.java9.concurrency.cookbook.chapter07.recipe09.data.Account;
-import com.packtpub.java9.concurrency.cookbook.chapter07.recipe09.task.Decrementer;
-import com.packtpub.java9.concurrency.cookbook.chapter07.recipe09.task.Incrementer;
 
 public class Main {
 
