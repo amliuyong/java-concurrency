@@ -2,23 +2,23 @@
 
 
 ## Thread Management
-1. Creating, running, and setting the characteristics of a thread [link](./tree/master/src/ch01_sync_util/c01)
-2. Interrupting a thread [link](./tree/master/src/ch01_sync_util/c02)
-3. Controlling the interruption of a thread [link](./tree/master/src/ch01_sync_util/c03)
-4. Sleeping and resuming a thread [link](./tree/master/src/ch01_sync_util/c04)
-5. Waiting for the finalization of a thread [link](./tree/master/src/ch01_sync_util/c05)
-6. Creating and running a daemon thread [link](./tree/master/src/ch01_sync_util/c06)
-7. Processing uncontrolled exceptions in a thread [link](./tree/master/src/ch01_sync_util/c07)
-8. Using thread local variables [link](./tree/master/src/ch01_sync_util/c08)
-9. Grouping threads and processing uncontrolled exceptions in a group of threads. [link](./tree/master/src/ch01_sync_util/c09)
+1. Creating, running, and setting the characteristics of a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c01)
+2. Interrupting a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c02)
+3. Controlling the interruption of a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c03)
+4. Sleeping and resuming a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c04)
+5. Waiting for the finalization of a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c05)
+6. Creating and running a daemon thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c06)
+7. Processing uncontrolled exceptions in a thread [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c07)
+8. Using thread local variables [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c08)
+9. Grouping threads and processing uncontrolled exceptions in a group of threads. [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c09)
    
    Use threadGroup.interrupt() to interrupt a group of threads
-10. Creating threads through a factory [link](./tree/master/src/ch01_sync_util/c10)
+10. Creating threads through a factory [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch01_sync_util/c10)
 
 ## Basic Thread Synchronization
-1. Synchronizing a method - synchronized [link](./tree/master/src/ch02_sync_util/c01)
-2. Using conditions in synchronized code - Producer and Consumer [link](./tree/master/src/ch02_sync_util/c02)
-3. Synchronizing a block of code with a lock - ReentrantLock [link](./tree/master/src/ch02_sync_util/c03)
+1. Synchronizing a method - synchronized [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c01)
+2. Using conditions in synchronized code - Producer and Consumer [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c02)
+3. Synchronizing a block of code with a lock - ReentrantLock [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c03)
 
    The constructor of the ReentrantLock class admits a boolean parameter named fair;
    this parameter allows you to control its behavior. The false value is the default value and
@@ -47,7 +47,7 @@
    with multiple readers and only one modifier.
    - The Lock interface offers better performance than the synchronized keyword
 
-4. Synchronizing data access with read/write locks [link](./tree/master/src/ch02_sync_util/c04)
+4. Synchronizing data access with read/write locks [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c04)
    
    One of the most significant improvements offered by locks is the ReadWriteLock interface
    and the ReentrantReadWriteLock class, the unique class that implements that interface.
@@ -59,9 +59,9 @@
    When you get the read lock of a Lock interface, you can't modify the value of the variable. 
    It is the responsibility of the programmer to ensure correct use of these locks.
    
-5. Using multiple conditions in a lock - lock.newCondition()  [link](./tree/master/src/ch02_sync_util/c05)
+5. Using multiple conditions in a lock - lock.newCondition()  [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c05)
   
-6. Advanced locking with the StampedLock class - Optimistic Read [link](./tree/master/src/ch02_sync_util/c06)
+6. Advanced locking with the StampedLock class - Optimistic Read [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch02_sync_util/c06)
 
    The most important features of StampedLock locks are as follows:
    
@@ -120,7 +120,7 @@
    explicitly completed in an asynchronous way in future. This class was introduced
    in Java 8 and has introduced new methods in Java 9.
    
-1. Controlling concurrent access to one or more copies of a resource [link](./tree/master/src/ch03_sync_util/c01)
+1. Controlling concurrent access to one or more copies of a resource [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c01)
    
    A semaphore is a counter that protects access to one or more shared resources.
    
@@ -132,13 +132,13 @@
    
    Fairness - The Semaphore class admits a second parameter in its constructor.
     
-2. Waiting for multiple concurrent events - CountDownLatch [link](./tree/master/src/ch03_sync_util/c02)
+2. Waiting for multiple concurrent events - CountDownLatch [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c02)
 
    The CountDownLatch mechanism is not used to protect a shared resource or a
    critical section. It is used to synchronize one or more threads with the execution
    of various tasks.
 
-3. Synchronizing tasks in a common point - CyclicBarrier [link](./tree/master/src/ch03_sync_util/c03)
+3. Synchronizing tasks in a common point - CyclicBarrier [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c03)
 
    The CyclicBarrier class is initialized with an integer number, which is the number of
    threads that will be synchronized at a determined point. When one of these threads arrives
@@ -157,7 +157,7 @@
    CyclicBarrier object can be reset to its initial state, assigning to its internal counter the
    value with which it was initialized.
 
-4. Running concurrent-phased tasks - Phaser [link](./tree/master/src/ch03_sync_util/c04)
+4. Running concurrent-phased tasks - Phaser [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c04)
    
    This mechanism is useful when we have some concurrent tasks divided into steps. 
    The Phaser class provides us with a mechanism to synchronize threads at the end of each step, 
@@ -174,7 +174,7 @@
    you should verify the return value of those methods (awaitAdvance() and
    arriveAndAwaitAdvance()) to know whether phaser has been terminated.
    
-5. Controlling phase change in concurrent-phased tasks -  Custom Phaser [link](./tree/master/src/ch03_sync_util/c05)
+5. Controlling phase change in concurrent-phased tasks -  Custom Phaser [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c05)
     
     The onAdvance() method returns a Boolean value that indicates whether phaser has
     terminated or not. If phaser returns false, it indicates that it hasn't terminated; if this
@@ -183,14 +183,14 @@
     state. With this, all future calls to any method of phaser will return immediately, and the
     isTerminated() method will return true.
  
- 6. Exchanging data between concurrent tasks - Exchanger [link](./tree/master/src/ch03_sync_util/c06)
+ 6. Exchanging data between concurrent tasks - Exchanger [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c06)
     
     The Exchanger class synchronizes only two threads, you can use it if you have a producer-consumer 
     problem with one producer and one consumer.
     
     the first thread that calls the exchange(buffer) method is put to sleep until the other threads arrive.
   
-  7. Completing and linking tasks asynchronously - CompletableFuture [link](./tree/master/src/ch03_sync_util/c07)
+  7. Completing and linking tasks asynchronously - CompletableFuture [link](https://github.com/amliuyong/java-concurrency/tree/master/srcch03_sync_util/c07)
   
      You can work with a CompletableFuture class in different ways:
      
