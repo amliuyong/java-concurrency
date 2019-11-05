@@ -120,7 +120,7 @@
    explicitly completed in an asynchronous way in future. This class was introduced
    in Java 8 and has introduced new methods in Java 9.
    
-1. Controlling concurrent access to one or more copies of a resource [link](./src/ch03_sync_util/c01)
+1. Controlling concurrent access to one or more copies of a resource - Semaphore [link](./src/ch03_sync_util/c01)
    
    A semaphore is a counter that protects access to one or more shared resources.
    
